@@ -8,21 +8,20 @@ pipeline {
         }
         stage('Build') {
             steps {
-                script {
-                    sh '''
-                        npm install
-                    '''
-                }
+                echo 'Building the application...'
+                sh 'npm install'  // Directly using npm here
             }
         }
         stage('Test') {
             steps {
-                // Test steps here
+                echo 'Running tests...'
+                // Add your test commands here
             }
         }
         stage('Deploy') {
             steps {
-                // Deploy steps here
+                echo 'Deploying the application...'
+                // Add your deploy commands here
             }
         }
     }
